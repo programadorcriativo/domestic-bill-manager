@@ -2,26 +2,43 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
+	<!--
+	Fornece configurações padrão para o nosso projeto. Com ele não necessitamos de colocar versões das bibliotecas
+	do spring. Por exemplo, a spring-boot-starter-data-jpa. A versão é herdada do parent
+	-->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+	<!--
+	Configurações do artefato do projeto
+	-->
 	<groupId>br.com.programadorcriativo</groupId>
 	<artifactId>domestic-bill-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>domestic-bill-manager</name>
 	<description>API Rest para controlar contas domesticas</description>
+
+	<!--
+	Proriedades que podem ser referenciadas no POM por meio de ${}
+	-->
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 		<kotlin.version>1.4.31</kotlin.version>
 	</properties>
+
+	<!--
+	Todas as dependencias do projeto
+	-->
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -30,6 +47,8 @@
 			<groupId>com.fasterxml.jackson.module</groupId>
 			<artifactId>jackson-module-kotlin</artifactId>
 		</dependency>
+
+		<!-- Dependencia kotlin poder funcionar corretamente -->
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
 			<artifactId>kotlin-reflect</artifactId>
@@ -58,13 +77,19 @@
 	</dependencies>
 
 	<build>
+		<!-- Está dizendo o diretório dos códigos fonte ao projeto -->
 		<sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+		<!-- Está dizendo o diretório dos códigos fonte de testes ao projeto -->
 		<testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
 		<plugins>
+			<!-- Springboot-dev-tools ja possui tasks  integradas com maven para facilitar algumas tarefas como livereload e
+			rotdeploy.
+			-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!-- Plugin kotlin para integracao com anotacoes do spring e classes de jpa.  -->
 			<plugin>
 				<groupId>org.jetbrains.kotlin</groupId>
 				<artifactId>kotlin-maven-plugin</artifactId>
@@ -78,6 +103,7 @@
 					</compilerPlugins>
 				</configuration>
 				<dependencies>
+					<!--Como todas as classes JPA devem ser open, esse plugin faz isso automaticamente quando elas são transpiladas para java-->
 					<dependency>
 						<groupId>org.jetbrains.kotlin</groupId>
 						<artifactId>kotlin-maven-allopen</artifactId>
