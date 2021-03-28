@@ -13,6 +13,6 @@ class DomesticBill(
     var id: Long,
     var description: String,
     var dueDate: LocalDate,
-    var value: BigDecimal,
+    var billAmount: BigDecimal,
     var owner: Person
 )
