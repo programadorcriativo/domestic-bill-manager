@@ -66,7 +66,7 @@ class DomesticBillResourceIntTest(
     }
 
     @Test
-    fun `patch successfully DomesticBill`() {
+    fun `put successfully DomesticBill`() {
         val putPath = "/api/domestic-bills"
         val domesticBill = buildDomesticBill()
         mockMvc.put(putPath) {
