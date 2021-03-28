@@ -10,7 +10,7 @@ API Rest para controle de contas domésticas
 
 ### Pré-requisitos
 
-- Java11
+- Java8 ou Java11
 
 ### Execução
 
