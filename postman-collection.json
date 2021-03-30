@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "e54291f4-f470-4c57-8495-5239b8d72e1f",
+		"name": "programador-aula-3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "Create Person",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Programador Criativo\",\n    \"cpf\": \"12345678910\"\n}"
+						},
+						"url": "http://localhost:8080/api/persons"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/persons/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Person by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/persons/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Person",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Programador Criativo v2\",\n    \"cpf\": \"12345678911\"\n}"
+						},
+						"url": "http://localhost:8080/api/persons/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Person",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/persons?page=&size=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"persons"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "size",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DomesticBill",
+			"item": [
+				{
+					"name": "Create DomesticBill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"A description 8893188148825229200 14\",\n    \"dueDate\": \"2021-03-29\",\n    \"billAmount\": 10.0,\n    \"ownerId\": 21\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/domestic-bills"
+					},
+					"response": []
+				},
+				{
+					"name": "Update DomesticBill",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"A description 8893188148825229200 v2\",\n    \"dueDate\": \"2021-03-30\",\n    \"billAmount\": 101.0,\n    \"ownerId\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/domestic-bills/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get DomesticBill by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/api/domestic-bills/7"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete DomesticBill by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/api/domestic-bills/7"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all DomesticBill",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/domestic-bills?size=2&page=0&sort=id,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"domestic-bills"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
