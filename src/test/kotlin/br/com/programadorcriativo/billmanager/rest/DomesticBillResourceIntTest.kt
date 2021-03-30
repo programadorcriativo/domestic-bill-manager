@@ -69,7 +69,7 @@ class DomesticBillResourceIntTest(
     fun `put successfully DomesticBill`() {
         val putPath = "/api/domestic-bills"
         val domesticBill = buildDomesticBill()
-        mockMvc.put(putPath) {
+        mockMvc.put("$putPath/1") {
             contentType = MediaType.APPLICATION_JSON
             content = mapper.writeValueAsString(domesticBill)
         }.andExpect {

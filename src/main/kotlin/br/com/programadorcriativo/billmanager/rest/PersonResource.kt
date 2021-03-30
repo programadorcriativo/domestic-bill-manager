@@ -34,9 +34,10 @@ class PersonResource {
         return ResponseEntity.ok(mockReturn())
     }
 
-    @PutMapping("/persons")
-    fun update(@RequestBody person: Person): ResponseEntity<Void> {
+    @PutMapping("/persons/{id}")
+    fun update(@PathVariable id: Long, @RequestBody person: Person): ResponseEntity<Void> {
         log.debug("Request to update a Person: {}", person)
+        person.id = id
         return ResponseEntity.noContent().build()
     }
 

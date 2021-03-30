@@ -51,7 +51,7 @@ class PersonResourceIntTest(
     fun `put successfully Person`() {
         val putPath = "/api/persons"
         val person = buildPerson()
-        mockMvc.put(putPath) {
+        mockMvc.put("$putPath/1") {
             contentType = MediaType.APPLICATION_JSON
             content = mapper.writeValueAsString(person)
         }.andExpect {

@@ -35,9 +35,10 @@ class DomesticBillResource {
         return ResponseEntity.ok(mockReturn())
     }
 
-    @PutMapping("/domestic-bills")
-    fun update(@RequestBody domesticBill: DomesticBill): ResponseEntity<Void> {
+    @PutMapping("/domestic-bills/{id}")
+    fun update(@PathVariable id: Long, @RequestBody domesticBill: DomesticBill): ResponseEntity<Void> {
         log.debug("Request to update a DomesticBill: {}", domesticBill)
+        domesticBill.id = id
         return ResponseEntity.noContent().build()
     }
 
