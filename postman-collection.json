@@ -63,36 +63,6 @@
 						"url": "http://localhost:8080/api/persons/1"
 					},
 					"response": []
-				},
-				{
-					"name": "Get all Person",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/persons?page=&size=",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"persons"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": ""
-								},
-								{
-									"key": "size",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -112,7 +82,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"description\": \"A description 8893188148825229200 14\",\n    \"dueDate\": \"2021-03-29\",\n    \"billAmount\": 10.0,\n    \"ownerId\": 21\n}",
+							"raw": "{\n    \"description\": \"A description 8893188148825229200 14\",\n    \"dueDate\": \"2021-03-29\",\n    \"billAmount\": 10.0,\n    \"owner\": {\n        \"id\": 1,\n        \"name\": \"Programador Criativo\",\n        \"cpf\": \"12345678910\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -136,7 +106,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"description\": \"A description 8893188148825229200 v2\",\n    \"dueDate\": \"2021-03-30\",\n    \"billAmount\": 101.0,\n    \"ownerId\": 6\n}",
+							"raw": "{\n    \"description\": \"A description 8893188148825229200 14\",\n    \"dueDate\": \"2021-03-29\",\n    \"billAmount\": 10.0,\n    \"owner\": {\n        \"id\": 1,\n        \"name\": \"Programador Criativo\",\n        \"cpf\": \"12345678910\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -174,46 +144,6 @@
 							}
 						],
 						"url": "http://localhost:8080/api/domestic-bills/7"
-					},
-					"response": []
-				},
-				{
-					"name": "Get all DomesticBill",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8080/api/domestic-bills?size=2&page=0&sort=id,desc",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"domestic-bills"
-							],
-							"query": [
-								{
-									"key": "size",
-									"value": "2"
-								},
-								{
-									"key": "page",
-									"value": "0"
-								},
-								{
-									"key": "sort",
-									"value": "id,desc"
-								}
-							]
-						}
 					},
 					"response": []
 				}
