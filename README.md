@@ -48,3 +48,8 @@ java -jar ./target/domestic-bill-manager-0.0.1-SNAPSHOT.jar
 ```shell
 ./mvnw spring-boot:run
 ```
+
+#### Testando a aplicação
+
+Na raiz do projeto existe um arquivo (`postman-collection.json`) do `Postman` com as requisições para testar os endpoints.
+Basta importar ele dentro do postman para ter acesso a todas as requests.
